@@ -1,0 +1,130 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Get version from tag
+      id: version
+      run: |
+        TAG=${GITHUB_REF#refs/tags/v}
+        echo "version=$TAG" >> $GITHUB_OUTPUT
+        echo "tag=$GITHUB_REF_NAME" >> $GITHUB_OUTPUT
+        echo "Release version: $TAG"
+
+    - name: Verify version matches manifest
+      run: |
+        MANIFEST_VERSION=$(jq -r '.version' manifest.json)
+        TAG_VERSION=${{ steps.version.outputs.version }}
+
+        if [ "$MANIFEST_VERSION" != "$TAG_VERSION" ]; then
+          echo "❌ Version mismatch!"
+          echo "manifest.json version: $MANIFEST_VERSION"
+          echo "Git tag version: $TAG_VERSION"
+          echo "Please update manifest.json version to match the git tag"
+          exit 1
+        fi
+        echo "✅ Version matches: $TAG_VERSION"
+
+    - name: Create extension package for Chrome Web Store
+      run: |
+        echo "Creating Chrome Web Store package..."
+        mkdir -p release
+
+        # Create zip including only necessary files for Chrome Web Store
+        zip -r release/just3d-${{ steps.version.outputs.version }}.zip \
+          manifest.json \
+          popup.html \
+          viewer.html \
+          scripts/ \
+          styles/ \
+          assets/ \
+          libs/ \
+          _locales/ \
+          LICENSE \
+          -x "*/.*" \
+          -x "*/*.md"
+
+        echo "✅ Chrome Web Store package created"
+        ls -lh release/
+
+    - name: Create source code archive
+      run: |
+        echo "Creating source code archive..."
+
+        zip -r release/just3d-${{ steps.version.outputs.version }}-source.zip . \
+          -x "*.git*" \
+          -x "*node_modules/*" \
+          -x "*release/*" \
+          -x "*DevDir/*"
+
+        echo "✅ Source code archive created"
+
+    - name: Generate release notes
+      id: release_notes
+      run: |
+        VERSION=${{ steps.version.outputs.version }}
+
+        cat > release_notes.md << EOF
+        # Just3D v${VERSION}
+
+        ## 📦 Installation
+
+        ### For Users
+        1. Download \`just3d-${VERSION}.zip\`
+        2. Go to \`chrome://extensions/\`
+        3. Enable "Developer mode"
+        4. Click "Load unpacked" and select the extracted folder
+
+        ### For Developers
+        - Download \`just3d-${VERSION}-source.zip\` for the complete source code
+
+        ## 📝 Files
+
+        - **just3d-${VERSION}.zip** - Ready to install Chrome extension
+        - **just3d-${VERSION}-source.zip** - Complete source code
+
+        ## 🔗 Links
+
+        - [Documentation](https://github.com/MrSidims/Just3D#readme)
+        - [Report Issues](https://github.com/MrSidims/Just3D/issues)
+
+        ---
+
+        **Built with ❤️ for the 3D community**
+        EOF
+
+        cat release_notes.md
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.version.outputs.tag }}
+        name: Just3D v${{ steps.version.outputs.version }}
+        body_path: release_notes.md
+        files: |
+          release/*.zip
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Release summary
+      run: |
+        echo "✅ Release v${{ steps.version.outputs.version }} created successfully!"
+        echo ""
+        echo "📦 Artifacts:"
+        ls -lh release/
+        echo ""
+        echo "🔗 View release at: https://github.com/MrSidims/Just3D/releases/tag/${{ steps.version.outputs.tag }}"

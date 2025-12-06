@@ -1,0 +1,331 @@
+{
+  "extensionName": {
+    "message": "Just3D - Просмотр и Конвертация 3D Моделей",
+    "description": "Название расширения"
+  },
+  "extensionDescription": {
+    "message": "Просматривайте и конвертируйте 3D модели в браузере. Поддержка STL, GLB, OBJ, FBX и других форматов. Создавайте 3D объекты с процедурными текстурами.",
+    "description": "Описание расширения"
+  },
+
+  "appTitle": {
+    "message": "Just3D"
+  },
+  "appSubtitle": {
+    "message": "Просмотр, Создание и Конвертация 3D Моделей"
+  },
+
+  "tabWorkspace": {
+    "message": "Просмотр и Создание"
+  },
+  "tabConverter": {
+    "message": "Конвертер"
+  },
+
+  "workspaceTitle": {
+    "message": "Рабочая Область Просмотра и Создания"
+  },
+  "workspaceDescription": {
+    "message": "Импортируйте 3D модели или создавайте объекты с нуля с полными возможностями редактирования."
+  },
+  "featuresTitle": {
+    "message": "Функции:"
+  },
+  "featureImport": {
+    "message": "Импорт моделей с компьютера или URL (STL, GLB, GLTF, OBJ, FBX, DAE, PLY)"
+  },
+  "featureCreate": {
+    "message": "Создание примитивных форм (Сфера, Куб, Цилиндр, Тор, Плоскость)"
+  },
+  "featureTextures": {
+    "message": "Применение сплошных цветов, процедурных текстур или изображений"
+  },
+  "featureMaterials": {
+    "message": "Настройка свойств материалов (металличность, шероховатость, свечение)"
+  },
+  "featureLiveEditing": {
+    "message": "Редактирование в реальном времени и мгновенный предпросмотр"
+  },
+  "featureExport": {
+    "message": "Экспорт в GLB/GLTF, OBJ, STL, PLY"
+  },
+
+  "btnOpenWorkspace": {
+    "message": "Открыть Рабочую Область"
+  },
+  "btnSelectModel": {
+    "message": "Выбрать Модель для Конвертации"
+  },
+  "btnConvert": {
+    "message": "Конвертировать и Скачать"
+  },
+
+  "labelConvertTo": {
+    "message": "Конвертировать в:"
+  },
+  "formatGLB": {
+    "message": "GLB (Бинарный glTF)"
+  },
+  "formatGLTF": {
+    "message": "GLTF (JSON glTF)"
+  },
+  "formatOBJ": {
+    "message": "OBJ (Wavefront)"
+  },
+  "formatSTL": {
+    "message": "STL (Стереолитография)"
+  },
+  "formatPLY": {
+    "message": "PLY (Формат Полигонального Файла)"
+  },
+
+  "helpLink": {
+    "message": "Справка и Документация"
+  },
+
+  "loadingModel": {
+    "message": "Загрузка модели..."
+  },
+
+  "btnReset": {
+    "message": "Сброс"
+  },
+  "btnWireframe": {
+    "message": "Каркас"
+  },
+  "btnGrid": {
+    "message": "Сетка"
+  },
+  "btnAxes": {
+    "message": "Оси"
+  },
+
+  "viewControls": {
+    "message": "Управление Просмотром"
+  },
+  "lighting": {
+    "message": "Освещение"
+  },
+  "background": {
+    "message": "Фон"
+  },
+  "measurements": {
+    "message": "Измерения"
+  },
+  "options": {
+    "message": "Настройки"
+  },
+
+  "lightingType": {
+    "message": "Тип:"
+  },
+  "lightingIntensity": {
+    "message": "Интенсивность:"
+  },
+  "lightingColor": {
+    "message": "Цвет:"
+  },
+  "shadowIntensity": {
+    "message": "Интенсивность Тени:"
+  },
+
+  "lightDefault": {
+    "message": "По умолчанию (Окружающий + Направленный)"
+  },
+  "lightPoint": {
+    "message": "Точечный Свет"
+  },
+  "lightSpot": {
+    "message": "Прожектор"
+  },
+  "lightHemisphere": {
+    "message": "Полусфера"
+  },
+
+  "bgType": {
+    "message": "Тип:"
+  },
+  "bgSolid": {
+    "message": "Сплошной Цвет"
+  },
+  "bgGradient": {
+    "message": "Градиент"
+  },
+  "bgCheckerboard": {
+    "message": "Шахматный Пол"
+  },
+  "bgColor": {
+    "message": "Цвет:"
+  },
+  "bgTopColor": {
+    "message": "Верхний Цвет:"
+  },
+  "bgBottomColor": {
+    "message": "Нижний Цвет:"
+  },
+
+  "measurementUnits": {
+    "message": "Единицы:"
+  },
+  "unitsMeters": {
+    "message": "Метры (м)"
+  },
+  "unitsCentimeters": {
+    "message": "Сантиметры (см)"
+  },
+  "unitsMillimeters": {
+    "message": "Миллиметры (мм)"
+  },
+  "unitsInches": {
+    "message": "Дюймы (д)"
+  },
+  "btnShowDimensions": {
+    "message": "Показать Размеры"
+  },
+  "btnClear": {
+    "message": "Очистить"
+  },
+
+  "createObject": {
+    "message": "Создать Объект"
+  },
+  "btnImportModel": {
+    "message": "Импортировать Модель"
+  },
+  "btnExportAll": {
+    "message": "Экспортировать Всё"
+  },
+  "importFromURL": {
+    "message": "Импорт по URL"
+  },
+  "urlPlaceholder": {
+    "message": "https://example.com/model.glb"
+  },
+  "btnLoadURL": {
+    "message": "Загрузить URL"
+  },
+  "importedModel": {
+    "message": "Импортированная Модель - Только Материал"
+  },
+
+  "objectType": {
+    "message": "Тип Объекта:"
+  },
+  "shapeSphere": {
+    "message": "Сфера"
+  },
+  "shapeCube": {
+    "message": "Куб"
+  },
+  "shapeCylinder": {
+    "message": "Цилиндр"
+  },
+  "shapeTorus": {
+    "message": "Тор"
+  },
+  "shapePlane": {
+    "message": "Плоскость"
+  },
+
+  "textureType": {
+    "message": "Тип Текстуры:"
+  },
+  "textureSolid": {
+    "message": "Сплошной Цвет"
+  },
+  "textureProcedural": {
+    "message": "Процедурная (FBM)"
+  },
+  "textureImage": {
+    "message": "Загрузить Изображение"
+  },
+
+  "materialProperties": {
+    "message": "Свойства Материала"
+  },
+  "metalness": {
+    "message": "Металличность:"
+  },
+  "roughness": {
+    "message": "Шероховатость:"
+  },
+  "emission": {
+    "message": "Свечение:"
+  },
+
+  "btnCreateObject": {
+    "message": "Создать Объект"
+  },
+  "btnExportObject": {
+    "message": "Экспортировать Объект"
+  },
+  "btnDeleteObject": {
+    "message": "Удалить Объект"
+  },
+
+  "cameraPresets": {
+    "message": "Пресеты Камеры"
+  },
+  "cameraFront": {
+    "message": "Спереди"
+  },
+  "cameraBack": {
+    "message": "Сзади"
+  },
+  "cameraLeft": {
+    "message": "Слева"
+  },
+  "cameraRight": {
+    "message": "Справа"
+  },
+  "cameraTop": {
+    "message": "Сверху"
+  },
+  "cameraBottom": {
+    "message": "Снизу"
+  },
+  "cameraIsometric": {
+    "message": "Изо"
+  },
+
+  "screenshot": {
+    "message": "Сделать Скриншот в Файл"
+  },
+  "screenshotCurrent": {
+    "message": "Текущий Вид"
+  },
+  "screenshotClean": {
+    "message": "Чистый"
+  },
+  "screenshotTransparent": {
+    "message": "Прозрачный"
+  },
+
+  "tooltipGitHub": {
+    "message": "Репозиторий GitHub"
+  },
+  "tooltipCoffee": {
+    "message": "Купите мне кофе"
+  },
+  "tooltipScreenshots": {
+    "message": "Скриншоты"
+  },
+  "tooltipCameraPresets": {
+    "message": "Пресеты Камеры"
+  },
+  "tooltipOptions": {
+    "message": "Настройки"
+  },
+  "tooltipResetView": {
+    "message": "Сбросить Вид"
+  },
+  "tooltipWireframe": {
+    "message": "Переключить Каркас"
+  },
+  "tooltipGrid": {
+    "message": "Переключить Сетку"
+  },
+  "tooltipAxes": {
+    "message": "Переключить Оси"
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="appTitle">Just3D</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 data-i18n="appTitle">Just3D</h1>
+      <p class="subtitle" data-i18n="appSubtitle">View, Create & Convert 3D Models</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="workspace" data-i18n="tabWorkspace">View & Create</button>
+      <button class="tab-button" data-tab="converter" data-i18n="tabConverter">Converter</button>
+    </div>
+
+    <!-- View & Create Tab -->
+    <div id="workspace-tab" class="tab-content active">
+      <div class="workspace-section">
+        <div class="workspace-info">
+          <h3 data-i18n="workspaceTitle">View & Create Workspace</h3>
+          <p data-i18n="workspaceDescription">Import 3D models or create objects from scratch with full editing capabilities.</p>
+
+          <div class="features-list">
+            <h4 data-i18n="featuresTitle">Features:</h4>
+            <ul>
+              <li><span data-i18n="featureImport">📂 Import models from computer (STL, GLB, GLTF, OBJ, FBX, DAE, PLY)</span></li>
+              <li><span data-i18n="featureCreate">✨ Create primitive shapes (Sphere, Cube, Cylinder, Torus, Plane)</span></li>
+              <li><span data-i18n="featureTextures">🎨 Apply solid colors, procedural textures, or images</span></li>
+              <li><span data-i18n="featureMaterials">💎 Configure material properties (metalness, roughness, emission)</span></li>
+              <li><span data-i18n="featureLiveEditing">🔄 Live editing and real-time preview</span></li>
+              <li><span data-i18n="featureExport">💾 Export to GLB/GLTF, OBJ, STL, PLY</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <button id="open-workspace" class="btn btn-primary" data-i18n="btnOpenWorkspace">Open Workspace</button>
+      </div>
+    </div>
+
+    <!-- Converter Tab -->
+    <div id="converter-tab" class="tab-content">
+      <div class="upload-section">
+        <label for="convert-file-input" class="file-label">
+          <span class="upload-icon">📁</span>
+          <span data-i18n="btnSelectModel">Select Model to Convert</span>
+        </label>
+        <input type="file" id="convert-file-input" accept=".stl,.glb,.gltf,.obj,.fbx,.dae,.ply" />
+      </div>
+
+      <div class="converter-options">
+        <label for="output-format" data-i18n="labelConvertTo">Convert to:</label>
+        <select id="output-format">
+          <option value="glb" data-i18n="formatGLB">GLB (Binary glTF)</option>
+          <option value="gltf" data-i18n="formatGLTF">GLTF (JSON glTF)</option>
+          <option value="obj" data-i18n="formatOBJ">OBJ (Wavefront)</option>
+          <option value="stl" data-i18n="formatSTL">STL (STereoLithography)</option>
+          <option value="ply" data-i18n="formatPLY">PLY (Polygon File Format)</option>
+        </select>
+      </div>
+
+      <button id="convert-btn" class="btn btn-primary" disabled data-i18n="btnConvert">Convert & Download</button>
+
+      <div id="conversion-status" class="status-message"></div>
+    </div>
+
+    <footer>
+      <a href="https://github.com/MrSidims/Just3D" id="help-link" target="_blank" data-i18n="helpLink">Help & Documentation</a>
+    </footer>
+  </div>
+
+  <script src="scripts/i18n.js"></script>
+  <script type="module" src="scripts/popup.js"></script>
+</body>
+</html>

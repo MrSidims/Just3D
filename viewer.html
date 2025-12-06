@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just3D Viewer</title>
+  <link rel="stylesheet" href="styles/viewer.css">
+</head>
+<body>
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading model...</p>
+  </div>
+
+  <div id="viewer-container"></div>
+
+  <!-- Top Right Quick Access Buttons -->
+  <div class="quick-actions">
+    <button id="github-link" class="quick-action-btn" title="GitHub Repository">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="color: #E6E6E6;">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+    </button>
+    <button id="coffee-link" class="quick-action-btn" title="Buy Me a Coffee">☕</button>
+    <button id="screenshot-menu-toggle" class="quick-action-btn" title="Screenshots">📷</button>
+    <button id="camera-menu-toggle" class="quick-action-btn" title="Camera Presets">🎥</button>
+    <button id="options-toggle" class="quick-action-btn" title="Options">⚙️</button>
+  </div>
+
+  <!-- Screenshot Panel (hidden by default) -->
+  <div class="quick-panel screenshot-panel" id="screenshot-panel" style="display: none;">
+    <h4>Take Screenshot to File</h4>
+    <button id="screenshot-normal" class="control-btn" title="Screenshot with current view">📷 Current View</button>
+    <button id="screenshot-clean" class="control-btn" title="Screenshot without grid/axes">📷 Clean</button>
+    <button id="screenshot-transparent" class="control-btn" title="Transparent background">📷 Transparent</button>
+  </div>
+
+  <!-- Camera Presets Panel (hidden by default) -->
+  <div class="quick-panel camera-panel" id="camera-panel" style="display: none;">
+    <h4>Camera Presets <span class="hint-text">(Keys 1-7)</span></h4>
+    <button id="camera-front" class="control-btn-small" title="Front View (Key 1)">1 Front</button>
+    <button id="camera-back" class="control-btn-small" title="Back View (Key 2)">2 Back</button>
+    <button id="camera-left" class="control-btn-small" title="Left View (Key 3)">3 Left</button>
+    <button id="camera-right" class="control-btn-small" title="Right View (Key 4)">4 Right</button>
+    <button id="camera-top" class="control-btn-small" title="Top View (Key 5)">5 Top</button>
+    <button id="camera-bottom" class="control-btn-small" title="Bottom View (Key 6)">6 Bottom</button>
+    <button id="camera-isometric" class="control-btn-small" title="Isometric View (Key 7)">7 Iso</button>
+  </div>
+
+  <!-- Options Panel (hidden by default) -->
+  <div class="options-panel" id="options-panel" style="display: none;">
+    <h3>Options</h3>
+
+    <div class="control-group">
+      <h4>View Controls</h4>
+      <button id="reset-view" class="control-btn" title="Reset View">🔄 Reset</button>
+      <button id="wireframe-toggle" class="control-btn" title="Toggle Wireframe">🔲 Wireframe</button>
+      <button id="grid-toggle" class="control-btn active" title="Toggle Grid">⊞ Grid</button>
+      <button id="axes-toggle" class="control-btn active" title="Toggle Axes">⊥ Axes</button>
+    </div>
+
+    <div class="control-group">
+      <h4>Lighting</h4>
+      <label>Type:</label>
+      <select id="light-type">
+        <option value="default">Default (Ambient + Directional)</option>
+        <option value="point">Point Light</option>
+        <option value="spot">Spot Light</option>
+        <option value="hemisphere">Hemisphere</option>
+      </select>
+
+      <label>Intensity: <span id="light-intensity-val">1.0</span></label>
+      <input type="range" id="light-intensity" min="0" max="3" step="0.1" value="1" />
+
+      <label>Color:</label>
+      <input type="color" id="light-color" value="#ffffff" />
+
+      <label>Shadow Intensity: <span id="shadow-intensity-val">0.5</span></label>
+      <input type="range" id="shadow-intensity" min="0" max="1" step="0.1" value="0.5" />
+    </div>
+
+    <div class="control-group">
+      <h4>Background</h4>
+      <label>Type:</label>
+      <select id="bg-type">
+        <option value="solid">Solid Color</option>
+        <option value="gradient">Gradient</option>
+        <option value="checkerboard">Checkerboard Floor</option>
+      </select>
+
+      <div id="bg-solid-options">
+        <label>Color:</label>
+        <input type="color" id="bg-color" value="#2a2a2a" />
+      </div>
+
+      <div id="bg-gradient-options" style="display: none;">
+        <label>Top Color:</label>
+        <input type="color" id="bg-gradient-top" value="#667eea" />
+        <label>Bottom Color:</label>
+        <input type="color" id="bg-gradient-bottom" value="#2a2a2a" />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <h4>Measurements</h4>
+      <label>Units:</label>
+      <select id="measurement-units">
+        <option value="m">Meters (m)</option>
+        <option value="cm">Centimeters (cm)</option>
+        <option value="mm">Millimeters (mm)</option>
+        <option value="in">Inches (in)</option>
+      </select>
+
+      <button id="show-dimensions" class="control-btn">📦 Show Dimensions</button>
+      <button id="clear-measurements" class="control-btn">🗑️ Clear</button>
+
+      <div id="measurement-display"></div>
+    </div>
+  </div>
+
+  <!-- Creator Panel (hidden by default) -->
+  <div class="creator-panel" id="creator-panel" style="display: none;">
+    <h3>Create Object</h3>
+
+    <div class="creator-actions">
+      <button id="creator-import-object" class="creator-btn-secondary">📂 Import Model</button>
+      <button id="creator-export-all" class="creator-btn-secondary">💾 Export All</button>
+    </div>
+
+    <div class="creator-export-settings">
+      <div class="creator-control-group">
+        <label>Export Format:</label>
+        <select id="export-format">
+          <option value="glb">GLB (Binary glTF) - Best for games</option>
+          <option value="gltf">GLTF (JSON glTF) - Editable format</option>
+          <option value="obj">OBJ (Wavefront) - Universal</option>
+          <option value="stl">STL (STereoLithography) - 3D printing</option>
+          <option value="ply">PLY (Polygon) - Point clouds</option>
+        </select>
+      </div>
+      <div class="creator-control-group">
+        <label>
+          <input type="checkbox" id="export-preserve-objects" checked>
+          Preserve individual objects
+        </label>
+      </div>
+    </div>
+
+    <div class="creator-divider"></div>
+
+    <div class="creator-url-import">
+      <h4>Import from URL</h4>
+      <div class="creator-control-group">
+        <input type="text" id="creator-url-input" placeholder="https://example.com/model.glb" class="creator-url-field">
+        <button id="creator-import-url" class="creator-btn-secondary">🌐 Load URL</button>
+      </div>
+    </div>
+
+    <div class="creator-divider"></div>
+
+    <!-- Imported Model Indicator (hidden by default) -->
+    <div id="imported-model-indicator" style="display: none;">
+      <div class="imported-model-badge">
+        📦 Imported Model - Material Only
+      </div>
+    </div>
+
+    <!-- Geometry Controls (hidden for imported models) -->
+    <div id="geometry-controls">
+      <div class="creator-control-group">
+        <label>Object Type:</label>
+        <select id="creator-object-type">
+          <option value="sphere">Sphere</option>
+          <option value="cube">Cube</option>
+          <option value="parallelepiped">Parallelepiped</option>
+          <option value="cylinder">Cylinder</option>
+          <option value="pyramid">Pyramid</option>
+          <option value="torus">Torus</option>
+          <option value="plane">Plane</option>
+        </select>
+      </div>
+
+    <div id="creator-sphere-params" class="creator-params">
+      <div class="creator-control-group">
+        <label>Radius: <span id="creator-sphere-radius-val">1.0</span></label>
+        <input type="range" id="creator-sphere-radius" min="0.5" max="5" step="0.1" value="1">
+      </div>
+      <div class="creator-control-group">
+        <label>Segments: <span id="creator-sphere-segments-val">32</span></label>
+        <input type="range" id="creator-sphere-segments" min="8" max="64" step="4" value="32">
+      </div>
+    </div>
+
+    <div id="creator-cube-params" class="creator-params" style="display: none;">
+      <div class="creator-control-group">
+        <label>Size: <span id="creator-cube-size-val">1.0</span></label>
+        <input type="range" id="creator-cube-size" min="0.5" max="5" step="0.1" value="1">
+      </div>
+    </div>
+
+    <div id="creator-parallelepiped-params" class="creator-params" style="display: none;">
+      <div class="creator-control-group">
+        <label>Width: <span id="creator-parallelepiped-width-val">2.0</span></label>
+        <input type="range" id="creator-parallelepiped-width" min="0.5" max="5" step="0.1" value="2">
+      </div>
+      <div class="creator-control-group">
+        <label>Height: <span id="creator-parallelepiped-height-val">1.0</span></label>
+        <input type="range" id="creator-parallelepiped-height" min="0.5" max="5" step="0.1" value="1">
+      </div>
+      <div class="creator-control-group">
+        <label>Depth: <span id="creator-parallelepiped-depth-val">1.5</span></label>
+        <input type="range" id="creator-parallelepiped-depth" min="0.5" max="5" step="0.1" value="1.5">
+      </div>
+    </div>
+
+    <div id="creator-cylinder-params" class="creator-params" style="display: none;">
+      <div class="creator-control-group">
+        <label>Radius: <span id="creator-cylinder-radius-val">1.0</span></label>
+        <input type="range" id="creator-cylinder-radius" min="0.5" max="3" step="0.1" value="1">
+      </div>
+      <div class="creator-control-group">
+        <label>Height: <span id="creator-cylinder-height-val">2.0</span></label>
+        <input type="range" id="creator-cylinder-height" min="0.5" max="5" step="0.1" value="2">
+      </div>
+    </div>
+
+    <div id="creator-pyramid-params" class="creator-params" style="display: none;">
+      <div class="creator-control-group">
+        <label>Base Size: <span id="creator-pyramid-base-val">2.0</span></label>
+        <input type="range" id="creator-pyramid-base" min="0.5" max="5" step="0.1" value="2">
+      </div>
+      <div class="creator-control-group">
+        <label>Height: <span id="creator-pyramid-height-val">2.0</span></label>
+        <input type="range" id="creator-pyramid-height" min="0.5" max="5" step="0.1" value="2">
+      </div>
+    </div>
+
+    <div id="creator-torus-params" class="creator-params" style="display: none;">
+      <div class="creator-control-group">
+        <label>Radius: <span id="creator-torus-radius-val">1.0</span></label>
+        <input type="range" id="creator-torus-radius" min="0.5" max="3" step="0.1" value="1">
+      </div>
+      <div class="creator-control-group">
+        <label>Tube: <span id="creator-torus-tube-val">0.4</span></label>
+        <input type="range" id="creator-torus-tube" min="0.1" max="1" step="0.05" value="0.4">
+      </div>
+    </div>
+
+    <div id="creator-plane-params" class="creator-params" style="display: none;">
+      <div class="creator-control-group">
+        <label>Width: <span id="creator-plane-width-val">5.0</span></label>
+        <input type="range" id="creator-plane-width" min="1" max="10" step="0.5" value="5">
+      </div>
+      <div class="creator-control-group">
+        <label>Height: <span id="creator-plane-height-val">5.0</span></label>
+        <input type="range" id="creator-plane-height" min="1" max="10" step="0.5" value="5">
+      </div>
+    </div>
+    </div> <!-- End of geometry-controls -->
+
+    <div class="creator-divider"></div>
+
+    <div class="creator-control-group">
+      <label>Texture Type:</label>
+      <select id="creator-texture-type">
+        <option value="color">Solid Color</option>
+        <option value="procedural">Procedural (FBM)</option>
+        <option value="image">Upload Image</option>
+      </select>
+    </div>
+
+    <div id="creator-color-texture" class="creator-texture-options">
+      <div class="creator-control-group">
+        <label>Color:</label>
+        <input type="color" id="creator-base-color" value="#888888">
+      </div>
+    </div>
+
+    <div id="creator-procedural-texture" class="creator-texture-options" style="display: none;">
+      <div class="creator-control-group">
+        <label>Color 1:</label>
+        <input type="color" id="creator-proc-color1" value="#ff6600">
+      </div>
+      <div class="creator-control-group">
+        <label>Color 2:</label>
+        <input type="color" id="creator-proc-color2" value="#ffcc00">
+      </div>
+      <div class="creator-control-group">
+        <label>Detail: <span id="creator-proc-octaves-val">5</span></label>
+        <input type="range" id="creator-proc-octaves" min="1" max="8" step="1" value="5">
+      </div>
+    </div>
+
+    <div id="creator-image-texture" class="creator-texture-options" style="display: none;">
+      <div class="creator-control-group">
+        <label>Upload Image:</label>
+        <input type="file" id="creator-texture-image" accept="image/*" class="creator-file-input">
+      </div>
+    </div>
+
+    <div class="creator-divider"></div>
+
+    <div class="creator-control-group">
+      <label>Emission: <span id="creator-emission-val">0.0</span></label>
+      <input type="range" id="creator-emission" min="0" max="2" step="0.1" value="0">
+    </div>
+
+    <div class="creator-control-group">
+      <label>Metalness: <span id="creator-metalness-val">0.0</span></label>
+      <input type="range" id="creator-metalness" min="0" max="1" step="0.1" value="0">
+    </div>
+
+    <div class="creator-control-group">
+      <label>Roughness: <span id="creator-roughness-val">0.5</span></label>
+      <input type="range" id="creator-roughness" min="0" max="1" step="0.1" value="0.5">
+    </div>
+
+    <button id="creator-add-object" class="creator-btn">➕ Add Object</button>
+    <button id="creator-update-object" class="creator-btn" style="display: none;">✏️ Update Object</button>
+    <button id="creator-delete-object" class="creator-btn-danger" style="display: none;">🗑️ Delete</button>
+
+    <div class="creator-divider"></div>
+
+    <!-- Transform Properties (shown when object is selected) -->
+    <div id="transform-properties" style="display: none;">
+      <h4>Transform</h4>
+
+      <div class="transform-group">
+        <label>Position</label>
+        <div class="coord-inputs">
+          <div class="coord-input">
+            <span>X</span>
+            <input type="number" id="pos-x" step="0.1" value="0">
+          </div>
+          <div class="coord-input">
+            <span>Y</span>
+            <input type="number" id="pos-y" step="0.1" value="0">
+          </div>
+          <div class="coord-input">
+            <span>Z</span>
+            <input type="number" id="pos-z" step="0.1" value="0">
+          </div>
+        </div>
+      </div>
+
+      <div class="transform-group">
+        <label>Rotation (degrees)</label>
+        <div class="coord-inputs">
+          <div class="coord-input">
+            <span>X</span>
+            <input type="number" id="rot-x" step="1" value="0">
+          </div>
+          <div class="coord-input">
+            <span>Y</span>
+            <input type="number" id="rot-y" step="1" value="0">
+          </div>
+          <div class="coord-input">
+            <span>Z</span>
+            <input type="number" id="rot-z" step="1" value="0">
+          </div>
+        </div>
+      </div>
+
+      <div class="transform-group">
+        <label>Scale</label>
+        <div class="coord-inputs">
+          <div class="coord-input">
+            <span>X</span>
+            <input type="number" id="scale-x" step="0.1" value="1" min="0.01">
+          </div>
+          <div class="coord-input">
+            <span>Y</span>
+            <input type="number" id="scale-y" step="0.1" value="1" min="0.01">
+          </div>
+          <div class="coord-input">
+            <span>Z</span>
+            <input type="number" id="scale-z" step="0.1" value="1" min="0.01">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="creator-divider"></div>
+
+    <!-- Multi-select operations -->
+    <div id="multi-select-ops" style="display: none;">
+      <h4>Multi-Object Operations</h4>
+      <button id="merge-objects" class="creator-btn-secondary">🔗 Merge Objects</button>
+    </div>
+
+    <div class="creator-divider"></div>
+
+    <div class="transform-mode-info">
+      <h4>Keyboard Shortcuts</h4>
+      <p><strong>G</strong> - Move</p>
+      <p><strong>R</strong> - Rotate</p>
+      <p><strong>S</strong> - Scale</p>
+    </div>
+  </div>
+
+  <!-- Object List Panel (hidden by default) -->
+  <div class="object-list-panel" id="object-list-panel" style="display: none;">
+    <h3>Objects</h3>
+    <div id="object-list-container"></div>
+  </div>
+
+  <script type="module" src="scripts/viewer.js"></script>
+</body>
+</html>

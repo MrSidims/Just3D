@@ -1,0 +1,331 @@
+{
+  "extensionName": {
+    "message": "Just3D - 3Dモデルビューアー＆コンバーター",
+    "description": "拡張機能の名前"
+  },
+  "extensionDescription": {
+    "message": "ブラウザで3Dモデルを表示・変換。STL、GLB、OBJ、FBXなどをサポート。プロシージャルテクスチャで3Dオブジェクトを作成。",
+    "description": "拡張機能の説明"
+  },
+
+  "appTitle": {
+    "message": "Just3D"
+  },
+  "appSubtitle": {
+    "message": "3Dモデルの表示、作成、変換"
+  },
+
+  "tabWorkspace": {
+    "message": "表示と作成"
+  },
+  "tabConverter": {
+    "message": "コンバーター"
+  },
+
+  "workspaceTitle": {
+    "message": "表示と作成ワークスペース"
+  },
+  "workspaceDescription": {
+    "message": "3Dモデルをインポートするか、完全な編集機能を使用してゼロからオブジェクトを作成します。"
+  },
+  "featuresTitle": {
+    "message": "機能："
+  },
+  "featureImport": {
+    "message": "コンピューターまたはURLからモデルをインポート（STL、GLB、GLTF、OBJ、FBX、DAE、PLY）"
+  },
+  "featureCreate": {
+    "message": "プリミティブ形状を作成（球、立方体、円柱、トーラス、平面）"
+  },
+  "featureTextures": {
+    "message": "ソリッドカラー、プロシージャルテクスチャ、または画像を適用"
+  },
+  "featureMaterials": {
+    "message": "マテリアルプロパティを設定（メタルネス、ラフネス、エミッション）"
+  },
+  "featureLiveEditing": {
+    "message": "ライブ編集とリアルタイムプレビュー"
+  },
+  "featureExport": {
+    "message": "GLB/GLTF、OBJ、STL、PLYにエクスポート"
+  },
+
+  "btnOpenWorkspace": {
+    "message": "ワークスペースを開く"
+  },
+  "btnSelectModel": {
+    "message": "変換するモデルを選択"
+  },
+  "btnConvert": {
+    "message": "変換してダウンロード"
+  },
+
+  "labelConvertTo": {
+    "message": "変換先："
+  },
+  "formatGLB": {
+    "message": "GLB（バイナリglTF）"
+  },
+  "formatGLTF": {
+    "message": "GLTF（JSON glTF）"
+  },
+  "formatOBJ": {
+    "message": "OBJ（Wavefront）"
+  },
+  "formatSTL": {
+    "message": "STL（ステレオリソグラフィ）"
+  },
+  "formatPLY": {
+    "message": "PLY（ポリゴンファイル形式）"
+  },
+
+  "helpLink": {
+    "message": "ヘルプとドキュメント"
+  },
+
+  "loadingModel": {
+    "message": "モデルを読み込んでいます..."
+  },
+
+  "btnReset": {
+    "message": "リセット"
+  },
+  "btnWireframe": {
+    "message": "ワイヤーフレーム"
+  },
+  "btnGrid": {
+    "message": "グリッド"
+  },
+  "btnAxes": {
+    "message": "軸"
+  },
+
+  "viewControls": {
+    "message": "ビューコントロール"
+  },
+  "lighting": {
+    "message": "ライティング"
+  },
+  "background": {
+    "message": "背景"
+  },
+  "measurements": {
+    "message": "測定"
+  },
+  "options": {
+    "message": "オプション"
+  },
+
+  "lightingType": {
+    "message": "タイプ："
+  },
+  "lightingIntensity": {
+    "message": "強度："
+  },
+  "lightingColor": {
+    "message": "色："
+  },
+  "shadowIntensity": {
+    "message": "シャドウの強度："
+  },
+
+  "lightDefault": {
+    "message": "デフォルト（アンビエント＋ディレクショナル）"
+  },
+  "lightPoint": {
+    "message": "ポイントライト"
+  },
+  "lightSpot": {
+    "message": "スポットライト"
+  },
+  "lightHemisphere": {
+    "message": "ヘミスフィア"
+  },
+
+  "bgType": {
+    "message": "タイプ："
+  },
+  "bgSolid": {
+    "message": "単色"
+  },
+  "bgGradient": {
+    "message": "グラデーション"
+  },
+  "bgCheckerboard": {
+    "message": "チェッカーボードフロア"
+  },
+  "bgColor": {
+    "message": "色："
+  },
+  "bgTopColor": {
+    "message": "上部の色："
+  },
+  "bgBottomColor": {
+    "message": "下部の色："
+  },
+
+  "measurementUnits": {
+    "message": "単位："
+  },
+  "unitsMeters": {
+    "message": "メートル（m）"
+  },
+  "unitsCentimeters": {
+    "message": "センチメートル（cm）"
+  },
+  "unitsMillimeters": {
+    "message": "ミリメートル（mm）"
+  },
+  "unitsInches": {
+    "message": "インチ（in）"
+  },
+  "btnShowDimensions": {
+    "message": "寸法を表示"
+  },
+  "btnClear": {
+    "message": "クリア"
+  },
+
+  "createObject": {
+    "message": "オブジェクトを作成"
+  },
+  "btnImportModel": {
+    "message": "モデルをインポート"
+  },
+  "btnExportAll": {
+    "message": "すべてエクスポート"
+  },
+  "importFromURL": {
+    "message": "URLからインポート"
+  },
+  "urlPlaceholder": {
+    "message": "https://example.com/model.glb"
+  },
+  "btnLoadURL": {
+    "message": "URLを読み込む"
+  },
+  "importedModel": {
+    "message": "インポートされたモデル - マテリアルのみ"
+  },
+
+  "objectType": {
+    "message": "オブジェクトタイプ："
+  },
+  "shapeSphere": {
+    "message": "球"
+  },
+  "shapeCube": {
+    "message": "立方体"
+  },
+  "shapeCylinder": {
+    "message": "円柱"
+  },
+  "shapeTorus": {
+    "message": "トーラス"
+  },
+  "shapePlane": {
+    "message": "平面"
+  },
+
+  "textureType": {
+    "message": "テクスチャタイプ："
+  },
+  "textureSolid": {
+    "message": "単色"
+  },
+  "textureProcedural": {
+    "message": "プロシージャル（FBM）"
+  },
+  "textureImage": {
+    "message": "画像をアップロード"
+  },
+
+  "materialProperties": {
+    "message": "マテリアルプロパティ"
+  },
+  "metalness": {
+    "message": "メタルネス："
+  },
+  "roughness": {
+    "message": "ラフネス："
+  },
+  "emission": {
+    "message": "エミッション："
+  },
+
+  "btnCreateObject": {
+    "message": "オブジェクトを作成"
+  },
+  "btnExportObject": {
+    "message": "オブジェクトをエクスポート"
+  },
+  "btnDeleteObject": {
+    "message": "オブジェクトを削除"
+  },
+
+  "cameraPresets": {
+    "message": "カメラプリセット"
+  },
+  "cameraFront": {
+    "message": "正面"
+  },
+  "cameraBack": {
+    "message": "背面"
+  },
+  "cameraLeft": {
+    "message": "左"
+  },
+  "cameraRight": {
+    "message": "右"
+  },
+  "cameraTop": {
+    "message": "上"
+  },
+  "cameraBottom": {
+    "message": "下"
+  },
+  "cameraIsometric": {
+    "message": "アイソ"
+  },
+
+  "screenshot": {
+    "message": "スクリーンショットをファイルに保存"
+  },
+  "screenshotCurrent": {
+    "message": "現在のビュー"
+  },
+  "screenshotClean": {
+    "message": "クリーン"
+  },
+  "screenshotTransparent": {
+    "message": "透明"
+  },
+
+  "tooltipGitHub": {
+    "message": "GitHubリポジトリ"
+  },
+  "tooltipCoffee": {
+    "message": "コーヒーをおごる"
+  },
+  "tooltipScreenshots": {
+    "message": "スクリーンショット"
+  },
+  "tooltipCameraPresets": {
+    "message": "カメラプリセット"
+  },
+  "tooltipOptions": {
+    "message": "オプション"
+  },
+  "tooltipResetView": {
+    "message": "ビューをリセット"
+  },
+  "tooltipWireframe": {
+    "message": "ワイヤーフレームを切り替え"
+  },
+  "tooltipGrid": {
+    "message": "グリッドを切り替え"
+  },
+  "tooltipAxes": {
+    "message": "軸を切り替え"
+  }
+}

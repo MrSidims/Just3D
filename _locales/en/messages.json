@@ -1,0 +1,322 @@
+{
+  "extensionName": {
+    "message": "Just3D - 3D Model Viewer & Converter",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "View and convert 3D models in your browser. Supports STL, GLB, OBJ, FBX and more. Create 3D objects with procedural textures.",
+    "description": "Description of the extension"
+  },
+
+  "appTitle": {
+    "message": "Just3D"
+  },
+  "appSubtitle": {
+    "message": "View, Create & Convert 3D Models"
+  },
+
+  "tabWorkspace": {
+    "message": "View & Create"
+  },
+  "tabConverter": {
+    "message": "Converter"
+  },
+
+  "workspaceTitle": {
+    "message": "View & Create Workspace"
+  },
+  "workspaceDescription": {
+    "message": "Import 3D models or create objects from scratch with full editing capabilities."
+  },
+  "featuresTitle": {
+    "message": "Features:"
+  },
+  "featureImport": {
+    "message": "Import models from computer (STL, GLB, GLTF, OBJ, FBX, DAE, PLY)"
+  },
+  "featureCreate": {
+    "message": "Create primitive shapes (Sphere, Cube, Cylinder, Torus, Plane)"
+  },
+  "featureTextures": {
+    "message": "Apply solid colors, procedural textures, or images"
+  },
+  "featureMaterials": {
+    "message": "Configure material properties (metalness, roughness, emission)"
+  },
+  "featureLiveEditing": {
+    "message": "Live editing and real-time preview"
+  },
+  "featureExport": {
+    "message": "Export to GLB/GLTF, OBJ, STL, PLY"
+  },
+
+  "btnOpenWorkspace": {
+    "message": "Open Workspace"
+  },
+  "btnSelectModel": {
+    "message": "Select Model to Convert"
+  },
+  "btnConvert": {
+    "message": "Convert & Download"
+  },
+
+  "labelConvertTo": {
+    "message": "Convert to:"
+  },
+  "formatGLB": {
+    "message": "GLB (Binary glTF)"
+  },
+  "formatGLTF": {
+    "message": "GLTF (JSON glTF)"
+  },
+  "formatOBJ": {
+    "message": "OBJ (Wavefront)"
+  },
+  "formatSTL": {
+    "message": "STL (STereoLithography)"
+  },
+  "formatPLY": {
+    "message": "PLY (Polygon File Format)"
+  },
+
+  "helpLink": {
+    "message": "Help & Documentation"
+  },
+
+  "loadingModel": {
+    "message": "Loading model..."
+  },
+
+  "btnReset": {
+    "message": "Reset"
+  },
+  "btnWireframe": {
+    "message": "Wireframe"
+  },
+  "btnGrid": {
+    "message": "Grid"
+  },
+  "btnAxes": {
+    "message": "Axes"
+  },
+
+  "viewControls": {
+    "message": "View Controls"
+  },
+  "lighting": {
+    "message": "Lighting"
+  },
+  "background": {
+    "message": "Background"
+  },
+  "measurements": {
+    "message": "Measurements"
+  },
+  "options": {
+    "message": "Options"
+  },
+
+  "lightingType": {
+    "message": "Type:"
+  },
+  "lightingIntensity": {
+    "message": "Intensity:"
+  },
+  "lightingColor": {
+    "message": "Color:"
+  },
+  "shadowIntensity": {
+    "message": "Shadow Intensity:"
+  },
+
+  "lightDefault": {
+    "message": "Default (Ambient + Directional)"
+  },
+  "lightPoint": {
+    "message": "Point Light"
+  },
+  "lightSpot": {
+    "message": "Spot Light"
+  },
+  "lightHemisphere": {
+    "message": "Hemisphere"
+  },
+
+  "bgType": {
+    "message": "Type:"
+  },
+  "bgSolid": {
+    "message": "Solid Color"
+  },
+  "bgGradient": {
+    "message": "Gradient"
+  },
+  "bgCheckerboard": {
+    "message": "Checkerboard Floor"
+  },
+  "bgColor": {
+    "message": "Color:"
+  },
+  "bgTopColor": {
+    "message": "Top Color:"
+  },
+  "bgBottomColor": {
+    "message": "Bottom Color:"
+  },
+
+  "measurementUnits": {
+    "message": "Units:"
+  },
+  "unitsMeters": {
+    "message": "Meters (m)"
+  },
+  "unitsCentimeters": {
+    "message": "Centimeters (cm)"
+  },
+  "unitsMillimeters": {
+    "message": "Millimeters (mm)"
+  },
+  "unitsInches": {
+    "message": "Inches (in)"
+  },
+  "btnShowDimensions": {
+    "message": "Show Dimensions"
+  },
+  "btnClear": {
+    "message": "Clear"
+  },
+
+  "createObject": {
+    "message": "Create Object"
+  },
+  "btnImportModel": {
+    "message": "Import Model"
+  },
+  "btnExportAll": {
+    "message": "Export All"
+  },
+  "importedModel": {
+    "message": "Imported Model - Material Only"
+  },
+
+  "objectType": {
+    "message": "Object Type:"
+  },
+  "shapeSphere": {
+    "message": "Sphere"
+  },
+  "shapeCube": {
+    "message": "Cube"
+  },
+  "shapeCylinder": {
+    "message": "Cylinder"
+  },
+  "shapeTorus": {
+    "message": "Torus"
+  },
+  "shapePlane": {
+    "message": "Plane"
+  },
+
+  "textureType": {
+    "message": "Texture Type:"
+  },
+  "textureSolid": {
+    "message": "Solid Color"
+  },
+  "textureProcedural": {
+    "message": "Procedural (FBM)"
+  },
+  "textureImage": {
+    "message": "Upload Image"
+  },
+
+  "materialProperties": {
+    "message": "Material Properties"
+  },
+  "metalness": {
+    "message": "Metalness:"
+  },
+  "roughness": {
+    "message": "Roughness:"
+  },
+  "emission": {
+    "message": "Emission:"
+  },
+
+  "btnCreateObject": {
+    "message": "Create Object"
+  },
+  "btnExportObject": {
+    "message": "Export Object"
+  },
+  "btnDeleteObject": {
+    "message": "Delete Object"
+  },
+
+  "cameraPresets": {
+    "message": "Camera Presets"
+  },
+  "cameraFront": {
+    "message": "Front"
+  },
+  "cameraBack": {
+    "message": "Back"
+  },
+  "cameraLeft": {
+    "message": "Left"
+  },
+  "cameraRight": {
+    "message": "Right"
+  },
+  "cameraTop": {
+    "message": "Top"
+  },
+  "cameraBottom": {
+    "message": "Bottom"
+  },
+  "cameraIsometric": {
+    "message": "Iso"
+  },
+
+  "screenshot": {
+    "message": "Take Screenshot to File"
+  },
+  "screenshotCurrent": {
+    "message": "Current View"
+  },
+  "screenshotClean": {
+    "message": "Clean"
+  },
+  "screenshotTransparent": {
+    "message": "Transparent"
+  },
+
+  "tooltipGitHub": {
+    "message": "GitHub Repository"
+  },
+  "tooltipCoffee": {
+    "message": "Buy Me a Coffee"
+  },
+  "tooltipScreenshots": {
+    "message": "Screenshots"
+  },
+  "tooltipCameraPresets": {
+    "message": "Camera Presets"
+  },
+  "tooltipOptions": {
+    "message": "Options"
+  },
+  "tooltipResetView": {
+    "message": "Reset View"
+  },
+  "tooltipWireframe": {
+    "message": "Toggle Wireframe"
+  },
+  "tooltipGrid": {
+    "message": "Toggle Grid"
+  },
+  "tooltipAxes": {
+    "message": "Toggle Axes"
+  }
+}

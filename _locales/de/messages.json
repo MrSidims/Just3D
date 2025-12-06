@@ -1,0 +1,331 @@
+{
+  "extensionName": {
+    "message": "Just3D - 3D-Modell-Betrachter & Konverter",
+    "description": "Name der Erweiterung"
+  },
+  "extensionDescription": {
+    "message": "Betrachten und konvertieren Sie 3D-Modelle in Ihrem Browser. Unterstützt STL, GLB, OBJ, FBX und mehr. Erstellen Sie 3D-Objekte mit prozeduralen Texturen.",
+    "description": "Beschreibung der Erweiterung"
+  },
+
+  "appTitle": {
+    "message": "Just3D"
+  },
+  "appSubtitle": {
+    "message": "Betrachten, Erstellen & Konvertieren von 3D-Modellen"
+  },
+
+  "tabWorkspace": {
+    "message": "Ansicht & Erstellen"
+  },
+  "tabConverter": {
+    "message": "Konverter"
+  },
+
+  "workspaceTitle": {
+    "message": "Arbeitsbereich Ansicht & Erstellen"
+  },
+  "workspaceDescription": {
+    "message": "Importieren Sie 3D-Modelle oder erstellen Sie Objekte von Grund auf mit vollständigen Bearbeitungsfunktionen."
+  },
+  "featuresTitle": {
+    "message": "Funktionen:"
+  },
+  "featureImport": {
+    "message": "Modelle vom Computer oder URL importieren (STL, GLB, GLTF, OBJ, FBX, DAE, PLY)"
+  },
+  "featureCreate": {
+    "message": "Primitive Formen erstellen (Kugel, Würfel, Zylinder, Torus, Ebene)"
+  },
+  "featureTextures": {
+    "message": "Volltonfarben, prozedurale Texturen oder Bilder anwenden"
+  },
+  "featureMaterials": {
+    "message": "Materialeigenschaften konfigurieren (Metallic, Rauheit, Emission)"
+  },
+  "featureLiveEditing": {
+    "message": "Live-Bearbeitung und Echtzeit-Vorschau"
+  },
+  "featureExport": {
+    "message": "Export nach GLB/GLTF, OBJ, STL, PLY"
+  },
+
+  "btnOpenWorkspace": {
+    "message": "Arbeitsbereich öffnen"
+  },
+  "btnSelectModel": {
+    "message": "Modell zum Konvertieren auswählen"
+  },
+  "btnConvert": {
+    "message": "Konvertieren & Herunterladen"
+  },
+
+  "labelConvertTo": {
+    "message": "Konvertieren nach:"
+  },
+  "formatGLB": {
+    "message": "GLB (Binär glTF)"
+  },
+  "formatGLTF": {
+    "message": "GLTF (JSON glTF)"
+  },
+  "formatOBJ": {
+    "message": "OBJ (Wavefront)"
+  },
+  "formatSTL": {
+    "message": "STL (STereoLithografie)"
+  },
+  "formatPLY": {
+    "message": "PLY (Polygon-Dateiformat)"
+  },
+
+  "helpLink": {
+    "message": "Hilfe & Dokumentation"
+  },
+
+  "loadingModel": {
+    "message": "Modell wird geladen..."
+  },
+
+  "btnReset": {
+    "message": "Zurücksetzen"
+  },
+  "btnWireframe": {
+    "message": "Drahtmodell"
+  },
+  "btnGrid": {
+    "message": "Raster"
+  },
+  "btnAxes": {
+    "message": "Achsen"
+  },
+
+  "viewControls": {
+    "message": "Ansichtssteuerung"
+  },
+  "lighting": {
+    "message": "Beleuchtung"
+  },
+  "background": {
+    "message": "Hintergrund"
+  },
+  "measurements": {
+    "message": "Messungen"
+  },
+  "options": {
+    "message": "Optionen"
+  },
+
+  "lightingType": {
+    "message": "Typ:"
+  },
+  "lightingIntensity": {
+    "message": "Intensität:"
+  },
+  "lightingColor": {
+    "message": "Farbe:"
+  },
+  "shadowIntensity": {
+    "message": "Schattenintensität:"
+  },
+
+  "lightDefault": {
+    "message": "Standard (Umgebung + Gerichtet)"
+  },
+  "lightPoint": {
+    "message": "Punktlicht"
+  },
+  "lightSpot": {
+    "message": "Scheinwerfer"
+  },
+  "lightHemisphere": {
+    "message": "Hemisphäre"
+  },
+
+  "bgType": {
+    "message": "Typ:"
+  },
+  "bgSolid": {
+    "message": "Volltonfarbe"
+  },
+  "bgGradient": {
+    "message": "Verlauf"
+  },
+  "bgCheckerboard": {
+    "message": "Schachbrettboden"
+  },
+  "bgColor": {
+    "message": "Farbe:"
+  },
+  "bgTopColor": {
+    "message": "Obere Farbe:"
+  },
+  "bgBottomColor": {
+    "message": "Untere Farbe:"
+  },
+
+  "measurementUnits": {
+    "message": "Einheiten:"
+  },
+  "unitsMeters": {
+    "message": "Meter (m)"
+  },
+  "unitsCentimeters": {
+    "message": "Zentimeter (cm)"
+  },
+  "unitsMillimeters": {
+    "message": "Millimeter (mm)"
+  },
+  "unitsInches": {
+    "message": "Zoll (in)"
+  },
+  "btnShowDimensions": {
+    "message": "Abmessungen anzeigen"
+  },
+  "btnClear": {
+    "message": "Löschen"
+  },
+
+  "createObject": {
+    "message": "Objekt erstellen"
+  },
+  "btnImportModel": {
+    "message": "Modell importieren"
+  },
+  "btnExportAll": {
+    "message": "Alles exportieren"
+  },
+  "importFromURL": {
+    "message": "Von URL importieren"
+  },
+  "urlPlaceholder": {
+    "message": "https://beispiel.de/modell.glb"
+  },
+  "btnLoadURL": {
+    "message": "URL laden"
+  },
+  "importedModel": {
+    "message": "Importiertes Modell - Nur Material"
+  },
+
+  "objectType": {
+    "message": "Objekttyp:"
+  },
+  "shapeSphere": {
+    "message": "Kugel"
+  },
+  "shapeCube": {
+    "message": "Würfel"
+  },
+  "shapeCylinder": {
+    "message": "Zylinder"
+  },
+  "shapeTorus": {
+    "message": "Torus"
+  },
+  "shapePlane": {
+    "message": "Ebene"
+  },
+
+  "textureType": {
+    "message": "Texturtyp:"
+  },
+  "textureSolid": {
+    "message": "Volltonfarbe"
+  },
+  "textureProcedural": {
+    "message": "Prozedural (FBM)"
+  },
+  "textureImage": {
+    "message": "Bild hochladen"
+  },
+
+  "materialProperties": {
+    "message": "Materialeigenschaften"
+  },
+  "metalness": {
+    "message": "Metallic:"
+  },
+  "roughness": {
+    "message": "Rauheit:"
+  },
+  "emission": {
+    "message": "Emission:"
+  },
+
+  "btnCreateObject": {
+    "message": "Objekt erstellen"
+  },
+  "btnExportObject": {
+    "message": "Objekt exportieren"
+  },
+  "btnDeleteObject": {
+    "message": "Objekt löschen"
+  },
+
+  "cameraPresets": {
+    "message": "Kamera-Voreinstellungen"
+  },
+  "cameraFront": {
+    "message": "Vorne"
+  },
+  "cameraBack": {
+    "message": "Hinten"
+  },
+  "cameraLeft": {
+    "message": "Links"
+  },
+  "cameraRight": {
+    "message": "Rechts"
+  },
+  "cameraTop": {
+    "message": "Oben"
+  },
+  "cameraBottom": {
+    "message": "Unten"
+  },
+  "cameraIsometric": {
+    "message": "Iso"
+  },
+
+  "screenshot": {
+    "message": "Screenshot in Datei aufnehmen"
+  },
+  "screenshotCurrent": {
+    "message": "Aktuelle Ansicht"
+  },
+  "screenshotClean": {
+    "message": "Sauber"
+  },
+  "screenshotTransparent": {
+    "message": "Transparent"
+  },
+
+  "tooltipGitHub": {
+    "message": "GitHub-Repository"
+  },
+  "tooltipCoffee": {
+    "message": "Spendiere mir einen Kaffee"
+  },
+  "tooltipScreenshots": {
+    "message": "Screenshots"
+  },
+  "tooltipCameraPresets": {
+    "message": "Kamera-Voreinstellungen"
+  },
+  "tooltipOptions": {
+    "message": "Optionen"
+  },
+  "tooltipResetView": {
+    "message": "Ansicht zurücksetzen"
+  },
+  "tooltipWireframe": {
+    "message": "Drahtmodell umschalten"
+  },
+  "tooltipGrid": {
+    "message": "Raster umschalten"
+  },
+  "tooltipAxes": {
+    "message": "Achsen umschalten"
+  }
+}
