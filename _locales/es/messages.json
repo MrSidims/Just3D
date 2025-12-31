@@ -4,7 +4,7 @@
     "description": "Nombre de la extensión"
   },
   "extensionDescription": {
-    "message": "Vea y convierta modelos 3D en su navegador. Compatible con STL, GLB, OBJ, FBX y más. Cree objetos 3D con texturas procedimentales.",
+    "message": "Vea y convierta modelos 3D en su navegador. Compatible con STL, GLB, OBJ y más. Cree objetos 3D con texturas procedimentales.",
     "description": "Descripción de la extensión"
   },
 
@@ -32,7 +32,7 @@
     "message": "Características:"
   },
   "featureImport": {
-    "message": "Importar modelos desde computadora o URL (STL, GLB, GLTF, OBJ, FBX, DAE, PLY)"
+    "message": "Importar modelos 3D desde computadora"
   },
   "featureCreate": {
     "message": "Crear formas primitivas (Esfera, Cubo, Cilindro, Toro, Plano)"
@@ -47,7 +47,7 @@
     "message": "Edición en vivo y vista previa en tiempo real"
   },
   "featureExport": {
-    "message": "Exportar a GLB/GLTF, OBJ, STL, PLY"
+    "message": "Exportar a formatos 3D deseados"
   },
 
   "btnOpenWorkspace": {

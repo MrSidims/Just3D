@@ -4,7 +4,7 @@
     "description": "Name of the extension"
   },
   "extensionDescription": {
-    "message": "View and convert 3D models in your browser. Supports STL, GLB, OBJ, FBX and more. Create 3D objects with procedural textures.",
+    "message": "View and convert 3D models in your browser. Supports STL, GLB, OBJ and more. Create 3D objects with procedural textures.",
     "description": "Description of the extension"
   },
 
@@ -32,7 +32,7 @@
     "message": "Features:"
   },
   "featureImport": {
-    "message": "Import models from computer (STL, GLB, GLTF, OBJ, FBX, DAE, PLY)"
+    "message": "Import 3D models from computer"
   },
   "featureCreate": {
     "message": "Create primitive shapes (Sphere, Cube, Cylinder, Torus, Plane)"
@@ -47,7 +47,7 @@
     "message": "Live editing and real-time preview"
   },
   "featureExport": {
-    "message": "Export to GLB/GLTF, OBJ, STL, PLY"
+    "message": "Export to desired 3D formats"
   },
 
   "btnOpenWorkspace": {

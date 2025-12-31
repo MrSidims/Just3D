@@ -4,7 +4,7 @@
     "description": "Nom de l'extension"
   },
   "extensionDescription": {
-    "message": "Visualisez et convertissez des modèles 3D dans votre navigateur. Supporte STL, GLB, OBJ, FBX et plus. Créez des objets 3D avec des textures procédurales.",
+    "message": "Visualisez et convertissez des modèles 3D dans votre navigateur. Supporte STL, GLB, OBJ et plus. Créez des objets 3D avec des textures procédurales.",
     "description": "Description de l'extension"
   },
 
@@ -32,7 +32,7 @@
     "message": "Fonctionnalités :"
   },
   "featureImport": {
-    "message": "Importer des modèles depuis l'ordinateur ou une URL (STL, GLB, GLTF, OBJ, FBX, DAE, PLY)"
+    "message": "Importer des modèles 3D depuis l'ordinateur"
   },
   "featureCreate": {
     "message": "Créer des formes primitives (Sphère, Cube, Cylindre, Tore, Plan)"
@@ -47,7 +47,7 @@
     "message": "Édition en direct et aperçu en temps réel"
   },
   "featureExport": {
-    "message": "Exporter vers GLB/GLTF, OBJ, STL, PLY"
+    "message": "Exporter vers les formats 3D souhaités"
   },
 
   "btnOpenWorkspace": {
