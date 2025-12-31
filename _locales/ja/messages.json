@@ -4,7 +4,7 @@
     "description": "拡張機能の名前"
   },
   "extensionDescription": {
-    "message": "ブラウザで3Dモデルを表示・変換。STL、GLB、OBJ、FBXなどをサポート。プロシージャルテクスチャで3Dオブジェクトを作成。",
+    "message": "ブラウザで3Dモデルを表示、変換、作成。STL、GLB、OBJなどをサポート。",
     "description": "拡張機能の説明"
   },
 
@@ -32,7 +32,7 @@
     "message": "機能："
   },
   "featureImport": {
-    "message": "コンピューターまたはURLからモデルをインポート（STL、GLB、GLTF、OBJ、FBX、DAE、PLY）"
+    "message": "コンピューターから3Dモデルをインポート"
   },
   "featureCreate": {
     "message": "プリミティブ形状を作成（球、立方体、円柱、トーラス、平面）"
@@ -47,7 +47,7 @@
     "message": "ライブ編集とリアルタイムプレビュー"
   },
   "featureExport": {
-    "message": "GLB/GLTF、OBJ、STL、PLYにエクスポート"
+    "message": "希望する3D形式にエクスポート"
   },
 
   "btnOpenWorkspace": {

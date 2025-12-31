@@ -4,7 +4,7 @@
     "description": "Name der Erweiterung"
   },
   "extensionDescription": {
-    "message": "Betrachten und konvertieren Sie 3D-Modelle in Ihrem Browser. Unterstützt STL, GLB, OBJ, FBX und mehr. Erstellen Sie 3D-Objekte mit prozeduralen Texturen.",
+    "message": "Betrachten, konvertieren oder erstellen Sie 3D-Modelle in Ihrem Browser. Unterstützt STL, GLB, OBJ und mehr.",
     "description": "Beschreibung der Erweiterung"
   },
 
@@ -32,7 +32,7 @@
     "message": "Funktionen:"
   },
   "featureImport": {
-    "message": "Modelle vom Computer oder URL importieren (STL, GLB, GLTF, OBJ, FBX, DAE, PLY)"
+    "message": "3D-Modelle vom Computer importieren"
   },
   "featureCreate": {
     "message": "Primitive Formen erstellen (Kugel, Würfel, Zylinder, Torus, Ebene)"
@@ -47,7 +47,7 @@
     "message": "Live-Bearbeitung und Echtzeit-Vorschau"
   },
   "featureExport": {
-    "message": "Export nach GLB/GLTF, OBJ, STL, PLY"
+    "message": "Export in gewünschte 3D-Formate"
   },
 
   "btnOpenWorkspace": {
